@@ -46,6 +46,17 @@ console.log(isPangram('The quick brown fox jumps over the lazy dog'))
 const findLongest = words => Math.max(...(words.map(el => el.length)));
 //Math.max() returns the largest of the numbers given as input parameters, or NaN if any parameter isn't a number and can't be converted into one.
 
+function findLongestWord(wordArr){//function called findLongestWord with a parameter of wordArr
+  let word = 0//created variable called word and declaring its value at 0
+  for(let i = 0; i < wordArr.length; i++){//for loop to iterate through the wordArr
+      if (wordArr[i].length > word){//if any of the indexes of the array is greater than 0
+          word = wordArr[i].length//declare that that the new value of word is equal to the index of the array
+      }
+  }return word//after the loop, return whatever the last declaration of word was
+}
+
+console.log(findLongestWord(["hi", "hello"]));
+
 
 console.log(findLongest(['word','twice','be']))
 //I don't think this last function made any sense, but I tried to find the longest word out of the arr of words. My assumption would be it would be O(n) as it's just looping through the array of words to find the longest word.
